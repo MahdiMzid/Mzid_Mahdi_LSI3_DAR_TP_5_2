@@ -2,7 +2,10 @@ package rmiService;
 
 import metier.Compte;
 
-public interface IBanque {
-    String creerCompte (Compte c);
-    String getInfoCompte(int code);
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
+public interface IBanque extends Remote {
+    String creerCompte (Compte c) throws RemoteException;
+    String getInfoCompte(int code) throws RemoteException;
 }
